@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="register-form" method="post" action="/signup">
+    <input type="text" placeholder="eventname" name="eventname" required/>
+    <input type="text" placeholder="organisationname" name="organisationname" required/>
+    <input type="text" placeholder="description" name="description" required/>
+    <input type="password" placeholder="password" name="password" minlength="5" maxlength="10" required/>
+    <input type="email" placeholder="email address" name="email" required/>
+    <input type="number" placeholder="maxpeople" name="maxpeople" required/>
+    <button>create</button>
+    <p class="message">Already registered? <a href="/login">Sign In</a></p>
+</form>
+</body>
+</html>

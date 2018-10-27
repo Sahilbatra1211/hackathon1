@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{users.eventname}}</h1>
+<h4>{{users.description}}</h4>
+<form class="register-form" method="post" action="/public/registration">
+    <input type="text" placeholder="username" name="username" required/>
+    <input type="text" placeholder="email" name="email" required/>
+    <input type="number" placeholder="age" name="age" required/>
+    <input type="text" placeholder="gender" name="gender"  required/>
+    <input type="number" placeholder="adhar card number" name="adharno" required/>
+    <button>create</button>
+    <p class="message">Already registered? <a href="/login">Sign In</a></p>
+</form>
+</body>
+</html>
