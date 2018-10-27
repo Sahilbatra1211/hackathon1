@@ -2,6 +2,7 @@ const route=require('express').Router();
 const model = require("../models/userdb");
 const {customer}=require("../models/customer");
 const randomstring=require('randomstring');
+var QRCode = require("qrcode");
 
 
 
@@ -27,9 +28,28 @@ route.post('/registration',(req,res)=>{
         secrettoken:secretToken
 
     }).then((createuser)=>{
+        let a =secretToken;
+
+        QRCode.toFile(
+            "C:/Users/lenovo/Pictures",
+            a,
+            {
+                color: {
+                    dark: "#000000", // Blue dots
+                    light: "#FFFFFF" // Transparent background
+                }
+            },
+            function(err) {
+                if (err) throw err;
+                console.log("done");
+            }
+        );
+
+
+
         const html=`hi there ,<br/> Thank you for registering!<br/>
                     <br/>>please verify your email by adding the following token:<br/>
-                    Token:<b>qr code</b>
+                    Token:<b>qr code{{secretToken}}</b>
                       <br/>On the following page:<a href="http://localhost:3000/verify">http://localhost:3000/verify</a><br/>Have a pleasant day`
 
         //send email
