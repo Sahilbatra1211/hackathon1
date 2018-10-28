@@ -1,20 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/userForm.css">
 </head>
-<body>
-<h1>{{users.eventname}}</h1>
-<h4>{{users.description}}</h4>
-<form class="register-form" method="post" action="/public/registration">
-    <input type="text" placeholder="username" name="username" required/>
-    <input type="text" placeholder="email" name="email" required/>
-    <input type="number" placeholder="age" name="age" required/>
-    <input type="text" placeholder="gender" name="gender"  required/>
-    <input type="number" placeholder="adhar card number" name="adharno" required/>
-    <button>create</button>
-    <p class="message">Already registered? <a href="/login">Sign In</a></p>
-</form>
+<body style="padding-top: 2%;padding-bottom:80px; background-color: #3AAFA9"; >
+<div class="container-fluid form">
+    <div class="container-fluid">
+        <div class="container-fluid page-header" style="text-align: center;background-color: #2B7A77;margin-left: 5%;margin-right: 5%;color: #FEFFFF
+"> <h1>{{users.eventname}}</h1>
+            <h3>{{users.description}}</h3></div>
+    </div>
+    <div class="container-fluid" style="padding-top: 1.5%;padding-left: 25%;padding-right: 25%" >
+        <div style="text-align: center;padding-bottom: 3%;font-size:4rem"><h1>Please Enter Your Details</h1></div>
+        <form class="register-form" method="post" action="/public/registration">
+
+            <div class="form-group">
+                <label for="usr1">Name :</label>
+                <input type="text" class="form-control" id="usr1" placeholder="Enter  Name" name="username"required/>
+            </div>
+
+            <div class="form-group">
+                <label for="email1">Email :</label>
+                <input type="email1" class="form-control" id="email1" placeholder="Enter Email" name="email"required/>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age :</label>
+                <input id="age" type="number" class="form-control" name="age" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="optradio">Gender :</label>
+                <input type="text" class="form-control" name="gender" required/>
+            </div>
+
+
+            <div class="form-group">
+                <label for="adh">Aadhar Card no. :</label>
+                <input id="adh" type="number" class="form-control" name="adharno" required/>
+            </div>
+
+            <div style="text-align: center">
+                <button type="submit" class="btn btn-default">Register</button>
+
+            </div>
+
+        </form>
+    </div>
+</div>
 </body>
 </html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>{{users.eventname}}</h1>-->
+<!--<h4>{{users.description}}</h4>-->
+<!--<form class="register-form" method="post" action="/public/registration">-->
+    <!--<input type="text" placeholder="username" name="username" required/>-->
+    <!--<input type="text" placeholder="email" name="email" required/>-->
+    <!--<input type="number" placeholder="age" name="age" required/>-->
+    <!--<input type="text" placeholder="gender" name="gender"  required/>-->
+    <!--<input type="number" placeholder="adhar card number" name="adharno" required/>-->
+    <!--<button>create</button>-->
+    <!--<p class="message">Already registered? <a href="/login">Sign In</a></p>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
