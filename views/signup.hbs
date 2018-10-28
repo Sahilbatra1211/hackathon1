@@ -1,19 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/cretaeEvent.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-<form class="register-form" method="post" action="/signup">
-    <input type="text" placeholder="eventname" name="eventname" required/>
-    <input type="text" placeholder="organisationname" name="organisationname" required/>
-    <input type="text" placeholder="description" name="description" required/>
-    <input type="password" placeholder="password" name="password" minlength="5" maxlength="10" required/>
-    <input type="email" placeholder="email address" name="email" required/>
-    <input type="number" placeholder="maxpeople" name="maxpeople" required/>
-    <button>create</button>
-    <p class="message">Already registered? <a href="/login">Sign In</a></p>
-</form>
+<body style="padding-top: 2%;padding-bottom:80px; background-color: #3AAFA9">
+<div class="container-fluid form">
+    <div class="container-fluid" style="padding-left: 150px;padding-right: 150px; color: #17242A;">
+        <div class="page-header" style="text-align: center">
+            <h1 style="font-size: 4.5rem">Create Your Event</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="padding-left: 25%; padding-right: 25%" >
+
+        <form class="register-form" method="post" action="/signup">
+
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="usr" placeholder="Enter Event Name" name="eventname" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="des">Description:</label>
+                <textarea class="form-control" rows="5" id="des" name="description" /required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="org">Organisation Name:</label>
+                <input type="text" class="form-control" id="org" placeholder="Enter Organisation Name" name="organisationname" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="Numb">Max. Number of People:</label>
+                <input id="Numb" type="number" class="form-control" name="maxpeople" value="0" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email of Organisation:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required/>
+            </div>
+
+            <div style="text-align: center">
+                <button type="submit" class="btn btn-default" style="background-color: #DEF2F1;color: #2B7A77;">Create!!!</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form class="register-form" method="post" action="/signup">-->
+    <!--<input type="text" placeholder="eventname" name="eventname" required/>-->
+    <!--<input type="text" placeholder="organisationname" name="organisationname" required/>-->
+    <!--<input type="text" placeholder="description" name="description" required/>-->
+    <!--<input type="password" placeholder="password" name="password" minlength="5" maxlength="10" required/>-->
+    <!--<input type="email" placeholder="email address" name="email" required/>-->
+    <!--<input type="number" placeholder="maxpeople" name="maxpeople" required/>-->
+    <!--<button>create</button>-->
+
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
