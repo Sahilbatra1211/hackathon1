@@ -1,5 +1,5 @@
 const route=require('express').Router();
-const model = require("../models/userdb");
+const model = require("../models/db");
 const passport=require('../config/pass');
 var bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -39,7 +39,7 @@ route.post("/signup", (req,res)=>{
         secrettoken:secretToken,
         email:req.body.email,
         maxpeople:req.body.maxpeople,
-        confirmed:false
+        confirmed:true
     }).then((createuser)=>{
         const html=`hi there ,<br/> Thank you for registering!<br/>
                     <br/>>please verify your email by adding the following token:<br/>
@@ -47,7 +47,7 @@ route.post("/signup", (req,res)=>{
                       <br/>On the following page:<a href="http://localhost:3000/verify">http://localhost:3000/verify</a><br/>Have a pleasant day`
 
         //send email
-        res.send('verification email has been sent to your email adress')
+        res.render('login');
        // mailer.sendEmail('mycoupon@company.com',createuser.email,'please verify your email',html)
 
 

@@ -1,5 +1,5 @@
 const route=require('express').Router();
-const model = require("../models/userdb");
+const model = require("../models/db");
 const {customer}=require("../models/customer");
 const randomstring=require('randomstring');
 var QRCode = require("qrcode");
@@ -30,20 +30,20 @@ route.post('/registration',(req,res)=>{
     }).then((createuser)=>{
         let a =secretToken;
 
-        QRCode.toFile(
-            "C:/Users/lenovo/Pictures",
-            a,
-            {
-                color: {
-                    dark: "#000000", // Blue dots
-                    light: "#FFFFFF" // Transparent background
-                }
-            },
-            function(err) {
-                if (err) throw err;
-                console.log("done");
-            }
-        );
+       // QRCode.toFile(
+         //   "C://Users/lenovo/Pictures",
+           // a,
+            //{
+              //  color: {
+                //    dark: "#000000", // Blue dots
+                  //  light: "#FFFFFF" // Transparent background
+                //}
+            //},
+            //function(err) {
+              //  if (err) throw err;
+               // console.log("done");
+            //}
+        //);
 
 
 
@@ -53,7 +53,8 @@ route.post('/registration',(req,res)=>{
                       <br/>On the following page:<a href="http://localhost:3000/verify">http://localhost:3000/verify</a><br/>Have a pleasant day`
 
         //send email
-        res.send('verification email has been sent to your email adress')
+        console.log(createuser);
+        res.render('alt',{createuser:createuser});
         // mailer.sendEmail('mycoupon@company.com',createuser.email,'please verify your email',html)
 
 

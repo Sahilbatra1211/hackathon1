@@ -7,6 +7,9 @@
 <body>
 link:<a href="/public/{{user.eventname}}">http://localhost:5000/public/{{user.eventname}}</a><br>
 <a href="#">stats</a><br>
-<a href="#">scanner</a><br>
+<form method="post" action="/private/check">
+    <input type="text" placeholder="string" name="secrettoken">
+    <button>login</button>
+</form>
 </body>
 </html>

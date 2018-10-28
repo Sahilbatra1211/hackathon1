@@ -1,4 +1,5 @@
 const route=require('express').Router();
+const {customer}=require('../models/customer')
 const authCheck=(req,res,next)=>{
     if(!req.user)       //middleware to check if user is not logged in
     {
@@ -21,5 +22,18 @@ route.get('/',(req,res)=>{
 
 });
 
-
+route.post('/check',(req,res)=>{
+    customer.findOne({
+        secrettoken:req.body.secrettoken
+    }).then((user)=>{
+        if(!user){
+            res.send('not verified');
+        }
+        console.log(user);
+        res.render('verified');
+    }).catch((err)=>{
+        console.log(err);
+        res.send('not verified');
+    })
+});
 exports=module.exports=route;

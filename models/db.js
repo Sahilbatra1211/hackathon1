@@ -8,10 +8,7 @@ const userSchema=new Schema({
     organisationname:String,
     description:String,
     maxpeople:{type:Number, default:100},
-    confirmed:{
-        type:Boolean,
-        default:true           //default should be false but since mailgun has not sent verification key so default is set true
-    },
+
     secrettoken:String,
     email:{type:String,unique:true}
 });

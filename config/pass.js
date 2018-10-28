@@ -1,5 +1,5 @@
 const pass=require('passport')
-const {user}=require('../models/userdb')
+const {user}=require('../models/db')
 const LocalStrategy=require('passport-local').Strategy
 
 
@@ -28,15 +28,10 @@ pass.use(new LocalStrategy((username, password, done)=>{
         organisationname:username,
     }).then((users)=>{
 
-        c=users.confirmed  ;     //agr error aye login me to isme await ka dekhio
-        console.log(c);
+
             if(!users){
 
             return done(null,false,{message:'no such user'})
-        }
-        if(!c){
-
-            return done(null,false,{message:'email id not confirmed'})
         }
         if(users.password!==password){
 
